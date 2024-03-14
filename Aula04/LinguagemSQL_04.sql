@@ -18,13 +18,13 @@ add tipoLancamento smallint NULL;
 /* inserindo registros*/
 INSERT INTO financas (descricao,cadastro,vencimento,valor,quitado,tipoLancamento)
 VALUES 
-('emasa',CURRENT_DATE,'20240316',155,0,2),
-('coelba',CURRENT_DATE,'20240310',83.72,0,2),
-('aluguel',CURRENT_DATE,'20240308',155,0,2),
+('emasa',CURRENT_DATE,'20240316',155,0,-1),
+('coelba',CURRENT_DATE,'20240310',83.72,0,-1),
+('aluguel',CURRENT_DATE,'20240308',155,0,-1),
 ('salário',CURRENT_DATE,'20240301',1412,1,1),
-('mercado',CURRENT_DATE,'20240315',355,0,2),
-('açougue',CURRENT_DATE,'20240315',95,0,2),
-('hortifruti',CURRENT_DATE,'20240315',70,0,2);
+('mercado',CURRENT_DATE,'20240315',355,0,-1),
+('açougue',CURRENT_DATE,'20240315',95,0,-1),
+('hortifruti',CURRENT_DATE,'20240315',70,0,-1);
 
 /* alterando registro */
 UPDATE financas
