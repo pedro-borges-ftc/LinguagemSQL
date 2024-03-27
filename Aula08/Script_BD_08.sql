@@ -133,23 +133,18 @@ BEGIN
 	(cod,'hortifruti',CURRENT_DATE,'20240423',70,0,-1),
 	(cod,'SALDO ANTERIOR',CURRENT_DATE,'20231231',cod,0,1);
 END;
+CREATE PROCEDURE Povoar_Financas(IN cod INT)
+BEGIN
+DECLARE contador INT DEFAULT 0;
+loop_teste: LOOP
+    SET contador = contador + 1;
+	CALL Inserir_Financas(contador);
+    IF contador >= cod THEN    	
+        LEAVE loop_teste;
+    END IF;
+END LOOP loop_teste;
+END;
 
 /* povoando a tabela finanças */
-CALL Inserir_Financas(1);
+CALL Povoar_Financas(70);
 SELECT * FROM financas order by id desc;
-
-/* Ajustando saldo anterior */
-SELECT * FROM financas where descricao = 'SALDO ANTERIOR' order by id desc;
-update financas set valor = codigo where descricao = 'SALDO ANTERIOR';
-
-/* saldo de um cliente */
-select 
-    c.nome ,
-    vencimento dia, 
-    valor * tipolancamento , 
-    (valor * tipolancamento + (
-      		select sum(valor * tipolancamento) from financas where codigo = 30 and vencimento < dia ) 
-       							) saldo
-FROM financas f join cliente c on (f.codigo = c.codigo)
-where f.codigo = 30
-order by dia;
