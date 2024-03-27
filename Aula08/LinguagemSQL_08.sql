@@ -1,4 +1,4 @@
--- Criando a tabela Cago
+-- Criando a tabela Cargo
 CREATE TABLE CARGO
 (
 CodCargo char(2)      NOT NULL,
