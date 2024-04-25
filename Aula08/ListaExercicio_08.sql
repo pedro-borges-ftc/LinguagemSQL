@@ -24,7 +24,7 @@ select
     'FULANO DE TALZ' AS NomeCliente,
     descricao as DescriçãoFinança,
     Count(1) as QuantidadeFinanças,
-    sum(valor * tipolancamento) as SaldoEmFevereiroR$
+    sum(valor * tipolancamento) as SomatórioR$
 FROM financas f join cliente c on (f.codigo = c.codigo)
 where c.nome = 'AEVERTON SANTOS DE OLIVEIRA'
 group by NomeCliente,DescriçãoFinança;
