@@ -1,7 +1,3 @@
-/*-------------------------------------------
--- CRIAÇÃO DE TABELAS PARA O EXERCÍCIO DA OAT
--------------------------------------------*/
-
 /* criando a tabela cliente */
 CREATE table cliente(
 codigo bigint PRIMARY KEY NOT NULL AUTO_INCREMENT,
