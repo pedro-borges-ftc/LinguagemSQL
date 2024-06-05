@@ -21,3 +21,11 @@ select
 FROM financas f join cliente c on (f.codigo = c.codigo)
 where c.nome = 'ciclano'
 order by DiaVencimento;
+
+/*como descobrir a alternatia certa*/
+SELECT *
+FROM vwQuestao03
+where SaldoResultante in (
+  SELECT max(SaldoResultante)
+FROM vwQuestao03
+  );
