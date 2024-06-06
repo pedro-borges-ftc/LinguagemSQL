@@ -6,7 +6,7 @@ Após executar a sentença, escolha a alternativa correta para o resultado obtid
 A- O valor da soma das finanças não quitadas varia entre 2100 e 2200
 B- O valor da soma das finanças não quitadas varia entre -2100 e -2300    Resposta correta
 C- O valor da soma das finanças não quitadas varia entre -2300 e -2400    
-D- O valor da soma das finanças quitadas varia entre 4100 e 4200          Resposta correta
+D- O valor da soma das finanças quitadas varia entre 4200 e 4300          Resposta correta
 E- O valor da soma das finanças quitadas varia entre -4200 e -4300
 */
 SELECT quitado, Sum(valor * tipolancamento),  count(1)
